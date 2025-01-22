@@ -203,8 +203,8 @@ main {
 /* 메인 - 퀵탑 버튼 */
 #quickTop {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 40px;
+    right: 40px;
 }
 
 /* ----- */
