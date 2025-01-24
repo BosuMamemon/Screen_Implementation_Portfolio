@@ -54,3 +54,15 @@ actUpper3.addEventListener('click', () => {
     fcsUpper2.classList.remove(`imActive`);
     fcsUpper3.classList.add(`imActive`);
 })
+
+
+// 패밀리사이트 select문 url 연결
+let familySiteForm = document.querySelector(`#familySiteForm`);
+let familySiteSelect = document.querySelector(`#familySiteSelect`);
+
+familySiteForm.addEventListener('submit', () => {
+    let url = document.querySelector(`#familySiteSelect`).value;
+    if (url) window.open(url);
+    else alert("패밀리사이트가 선택되지 않았습니다.")
+    return false;
+})
