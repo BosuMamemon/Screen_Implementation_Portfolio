@@ -19,6 +19,9 @@ fieldset {
 main {
     width: 100%;
     height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #f1f1f1;
 }
 /* 로그인 영역 지정 */
@@ -26,9 +29,6 @@ main {
     border-radius: 10px;
     width: 800px;
     height: 500px;
-    position: relative;
-    top: 10%;
-    left: 25%;
     display: flex;
     flex-direction: row;
     background-color: #fff;
@@ -89,16 +89,24 @@ h2, .logInLeft > div {
     height: 40px;
     line-height: 40px;
 }
-#logInContent button {
-    width: 100%;
+.button {
+    margin-top: 50px;
+    border: none;
+    border-radius: 40px;
+    width: 155px;
     height: 40px;
+    position: relative;
     line-height: 40px;
     background: #2d79c8;
     color: #fff;
-    border: none;
-    margin-top: 50px;
     cursor: pointer;
-    border-radius: 40px;
+}
+.logIn {
+    right: 78px;
+}
+.register {
+    top: -79px;
+    left: 205px;
 }
 #id {
     background: url(https://staff.hf.go.kr/resources/images/lo/icon_user.png) no-repeat 0 0;

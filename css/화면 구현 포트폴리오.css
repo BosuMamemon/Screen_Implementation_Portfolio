@@ -21,6 +21,7 @@ a {
     text-decoration: none;
 }
 button {
+    border: none;
     appearance: none;
 }
 select {
@@ -55,7 +56,7 @@ select {
     border: none;
     width: 660px;
 }
-    /* 아이템 CSS */
+    /* 헤더: 내비게이션 검색창 - 아이템 CSS */
 #nsSelect {
     border: none;
     padding: 0 10px;
@@ -106,7 +107,6 @@ header {
     height: 120px;
     position: relative;
 }
-    /* 아이템 CSS */
     /* 헤더: 내비게이션 영역 지정 */
 header ul {
     display: flex;
@@ -126,7 +126,7 @@ header ul {
 header ul:hover {
     background-color: white;
 }
-
+    /* 헤더: 내비게이션 - 아이템 CSS */
     /* 내비게이션: 로고 */
 #logo {
     width: 240px;
@@ -159,7 +159,6 @@ header ul:hover a {
 }
 header ul:hover a:hover {
     color: #2579d9;
-    transition: 0.15s;
 }
 
     /* 내비게이션: 우측 아이콘 */
@@ -205,12 +204,98 @@ header ul:hover #navSearchIcon {
     background-position: -431px -167px;
 }
 
-/* 헤더: 캐러셀 영역 */
-#carousel {
-    width: 100%;
+    /* ------------------------- */
+
+/* 헤더: 캐러셀 영역 지정 */
+.headerCarousel {
+    height: 990px;
     position: relative;
     top: -120px;
+    overflow: hidden;
     z-index: 1;
+}
+.c1 {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
+.c2 {
+    position: relative;
+    left: 100%;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
+.c3 {
+    position: relative;
+    left: 200%;
+    transform: translate3d(0, 0, 0);
+    transition: 1s;
+}
+    /* 헤더: 캐러셀 - 아이템 CSS */
+.img {
+    position: absolute;
+}
+.slogan {
+    position: absolute;
+    top: 400px;
+    left: 13%;
+    z-index: 2;
+}
+.leftButton {
+    display: block;
+    width: 46px;
+    height: 90px;
+    background: url(https://www.hf.go.kr/_res/hf/ko/img/main/visual_left.png) no-repeat;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.15s;
+}
+.hcLeft {
+    position: absolute;
+    top: 50%;
+    left: 67px;
+}
+.rightButton {
+    display: block;
+    width: 46px;
+    height: 90px;
+    background: url(https://www.hf.go.kr/_res/hf/ko/img/main/visual_right.png) no-repeat;
+    cursor: pointer;
+    z-index: 3;
+    transition: 0.15s;
+}
+.hcRight {
+    position: absolute;
+    top: 50%;
+    right: 67px;
+}
+.hcLClicked {
+    left: 57px;
+}
+.hcRClicked {
+    right: 57px;
+}
+
+    /* 헤더: 캐러셀 - 하단 화살표 애니메이션 */
+#scroll {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 47px;
+    background: url(https://www.hf.go.kr/_res/hf/ko/img/main/scroll_arr.png) no-repeat 0 0;
+    position: absolute;
+    left: calc(50% - 75px);
+    animation: carouselBottom 1s infinite ease-out;
+}
+@keyframes carouselBottom {
+    from {
+        bottom: 50px;
+        opacity: 0.5;
+    }
+    to {
+        bottom: 20px;
+        opacity: 1;
+    }
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -221,6 +306,8 @@ main {
     position: relative;
     top: 870px;
 }
+
+/* ------------------------- */
 
 /* 메인: 핫이슈 섹션 영역 지정 */
 .issueContainer {
@@ -254,7 +341,7 @@ main {
 .issueSearch img {
     margin-bottom: 20px;
 }
-    /* 아이템 CSS */
+    /* 핫이슈: 서치 영역 - 아이템 CSS */
 .issueHash {
     display: flex;
     flex-direction: row;
@@ -308,14 +395,13 @@ main {
 .issueSearchBar button:active {
     border: 3px solid red;
 }
-
     /* 핫이슈: 메뉴 영역 지정 */
 .issueMenu {
     margin-left: 40px;
     width: 735px;
     height: 300px;
 }
-    /* 아이템 CSS */
+    /* 핫이슈: 메뉴 영역 - 아이템 CSS */
 .imUpper {
     width: 100%;
     height: 55px;
@@ -400,6 +486,8 @@ main {
     z-index: 0;
 }
 
+/* ------------------------- */
+
 /* 메인: 플렉스 섹션 영역 지정 */
 .container {
     width: 100%;
@@ -423,9 +511,9 @@ main {
 }
     /* 플렉스: 아이템 CSS */
 .flexItem {
-    border-radius: 28px;   
+    border-radius: 28px;
 }
-.flex1 > div:hover, .flex2 > div:hover, .flex3 > div:hover {
+.flex1 > div:not(.notice):hover, .flex2 > div:hover, .flex3 > div:hover {
     transform: scale(1.03);
     transition: 0.15s;
 }
@@ -448,7 +536,7 @@ main {
 .webzine .flexItem {
     border-radius: 80px;
 }
-.reverseMortgage .flexItem, .deposit .flexItem, .video, .notice .flexCarousel {
+.reverseMortgage .flexItem, .deposit .flexItem, .video {
     margin-top: 70px;
 }
 .ad img {
@@ -463,11 +551,35 @@ main {
     border-radius: 14px;
 }
 
-/* 메인: 퀵 탑 버튼 섹션 */
-#quickTop {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
+    /* 플렉스: 캐러셀 */
+.notice {
+    overflow: hidden;
+}
+.flexCarousel {
+    margin-top: 70px;
+    width: 432px;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s;
+    align-items: center;
+}
+.fcLeft {
+    position: relative;
+    top: 365px;
+    left: 10px;
+    filter: drop-shadow(0 0 3px black);
+}
+.fcRight {
+    position: relative;
+    bottom: 365px;
+    left: 375px;
+    filter: drop-shadow(0 0 3px black);
+}
+.fcLClicked {
+    left: 0px;
+}
+.fcRClicked {
+    left: 385px;
 }
 
 /* ------------------------------------------------------------------------------------------------------------------- */
@@ -542,4 +654,13 @@ footer form input {
     cursor: pointer;
     font-size: 1em;
     color: black;
+}
+
+/* ------------------------------ */
+
+/* 퀵 탑 버튼 */
+#quickTop {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
 }

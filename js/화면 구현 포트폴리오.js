@@ -1,4 +1,37 @@
 
+// 헤더: 캐러셀 동작 기능
+let carousel = document.querySelector(`.headerCarousel`);
+let c1 = document.querySelector(`.c1`);
+let c2 = document.querySelector(`.c2`);
+let c3 = document.querySelector(`.c3`);
+let hLeftButton = document.querySelector(`.hcLeft`);
+let hRightButton = document.querySelector(`.hcRight`);
+let hcIndex = 0;
+
+hLeftButton.addEventListener(`mousedown`, () => {
+    hLeftButton.classList.add(`hcLClicked`);
+})
+hLeftButton.addEventListener(`mouseup`, () => {
+    hLeftButton.classList.remove(`hcLClicked`);
+    hcIndex -= 1;
+    if (hcIndex === -1) hcIndex = 2;
+    c1.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+    c2.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+    c3.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+})
+hRightButton.addEventListener(`mousedown`, () => {
+    hRightButton.classList.add(`hcRClicked`);
+})
+hRightButton.addEventListener(`mouseup`, () => {
+    hRightButton.classList.remove(`hcRClicked`);
+    hcIndex += 1;
+    if (hcIndex === 3) hcIndex = 0;
+    c1.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+    c2.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+    c3.style.transform = `translate3d(-${100 * hcIndex}%, 0, 0)`;
+})
+
+
 // 헤더: 내비게이션 검색창 켜고 끄기 기능
 let navSearch = document.querySelector(`.navSearch`);
 let navSearchIcon = document.querySelector(`#navSearchIcon`);
@@ -53,6 +86,32 @@ actUpper3.addEventListener('click', () => {
     fcsUpper1.classList.remove(`imActive`);
     fcsUpper2.classList.remove(`imActive`);
     fcsUpper3.classList.add(`imActive`);
+})
+
+
+// 플렉스: 캐러셀 동작 기능
+let flexCarousel = document.querySelector(`.flexCarousel`);
+let fLeftButton = document.querySelector(`.fcLeft`);
+let fRightButton = document.querySelector(`.fcRight`);
+let fcIndex = 0;
+
+fLeftButton.addEventListener(`mousedown`, () => {
+    fLeftButton.classList.add(`fcLClicked`);
+})
+fLeftButton.addEventListener(`mouseup`, () => {
+    fLeftButton.classList.remove(`fcLClicked`);
+    fcIndex -= 1;
+    if (fcIndex === -1) fcIndex = 5;
+    flexCarousel.style.transform = `translate3d(-${432 * fcIndex}px, 0, 0)`;
+})
+fRightButton.addEventListener(`mousedown`, () => {
+    fRightButton.classList.add(`fcRClicked`);
+})
+fRightButton.addEventListener(`mouseup`, () => {
+    fRightButton.classList.remove(`fcRClicked`);
+    fcIndex += 1;
+    if (fcIndex === 6) fcIndex = 0;
+    flexCarousel.style.transform = `translate3d(-${432 * fcIndex}px, 0, 0)`;
 })
 
 
