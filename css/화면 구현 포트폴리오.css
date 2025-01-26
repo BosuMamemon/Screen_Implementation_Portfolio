@@ -520,6 +520,10 @@ main {
 .text {
     padding: 15px 28px 0;
 }
+.noticeText {
+    position: relative;
+    bottom: 95px;
+}
 .text .caption {
     font-size: 17px;
     line-height: 20px;
