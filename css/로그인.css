@@ -1,0 +1,130 @@
+/* 전역 CSS */
+.noto-sans-kr-<uniquifier> {
+    font-family: "Noto Sans KR", serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR';
+}
+fieldset {
+    border: none;
+}
+
+
+/* 메인 */
+main {
+    width: 100%;
+    height: 90vh;
+    background-color: #f1f1f1;
+}
+/* 로그인 영역 지정 */
+.container {
+    border-radius: 10px;
+    width: 800px;
+    height: 500px;
+    position: relative;
+    top: 10%;
+    left: 25%;
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+}
+    /* 로그인 영역 - 왼쪽 */
+.logInLeft {
+    width: 397px;
+    background-color: #2d79c8;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: #fff;
+}
+.logInLeft img, .logInLeft h2, .logInLeft > div {
+    position: relative;
+    left: 50px;
+    top: 100px;
+}
+h2, .logInLeft > div {
+    margin: 15px 0;
+}
+.leftBar {
+    position: relative;
+    top: 120px;
+    left: 50px;
+    width: 100px;
+    height: 2px;
+    background: #fff;
+}
+    /* 로그인 영역 - 오른쪽 */
+.logInRight {
+    width: 390px;
+}
+.logInRight h2, .logInRight div, .logInRight form {
+    position: relative;
+    top: 50px;
+}
+.logInRight h2 {
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+.rightBar {
+    width: 50px;
+    height: 2px;
+    margin: 0 auto;
+    background: #2d79c8;
+}
+#logInContent fieldset {
+    padding: 10%;
+    text-align: center;
+}
+#logInContent input {
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1px solid #dcdcdc;
+    border-radius: 3px;
+    padding: 4px 10px;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+}
+#logInContent button {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: #2d79c8;
+    color: #fff;
+    border: none;
+    margin-top: 50px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+#id {
+    background: url(https://staff.hf.go.kr/resources/images/lo/icon_user.png) no-repeat 0 0;
+    background-position: 95% 50%;
+}
+#pw {
+    background-image: url(https://staff.hf.go.kr/resources/images/lo/icon_pw.png);
+    background-color: rgb(249, 249, 153);
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+
+/* 푸터 영역 */
+footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    text-align: center;
+}
+.footerText {
+    text-align: center;
+    font-size: 12px;
+    color: #555555;
+}
